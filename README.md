@@ -1,3 +1,5 @@
-Please modify this file so it contains ONLY your full name: Surname & First Name
+This my project.
 
-You can find the related resources at https://github.com/utcn-cs-software-design-tudorv-2019/LabInfo
+Lately I do have a passion for motorcycles and therefore I want to take the driving class.
+So, I would like to make a web-site that will keep track of students, trainers, motorcicles and their state,
+who took the exam(theoretical and practical), have the possibility to take a sample theoretical test and so on. 
