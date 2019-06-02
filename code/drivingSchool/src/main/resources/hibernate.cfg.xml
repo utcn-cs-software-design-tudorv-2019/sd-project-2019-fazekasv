@@ -16,9 +16,6 @@
 		<property name="show_sql">true</property>
 
 		<!-- Mapping With Model Class Containing Annotations -->
-		<mapping class="model.entities.Profesor" />
-		<mapping class="model.entities.Student" />
-		<mapping class="model.entities.Exam" />
-		<mapping class="model.entities.Materie" />
+		<mapping class="com.project.drivingSchool.model.entity.User" />
 	</session-factory>
 </hibernate-configuration>
