@@ -17,5 +17,10 @@
 
 		<!-- Mapping With Model Class Containing Annotations -->
 		<mapping class="com.project.drivingSchool.model.entity.User" />
+		<mapping class="com.project.drivingSchool.model.entity.Trainer" />
+		<mapping class="com.project.drivingSchool.model.entity.Course" />
+		<mapping class="com.project.drivingSchool.model.entity.Exam" />
+		<mapping class="com.project.drivingSchool.model.entity.Trainee" />
+		<mapping class="com.project.drivingSchool.model.entity.Vehicle" />
 	</session-factory>
 </hibernate-configuration>
