@@ -72,6 +72,7 @@ values ('10-10-2019','1'),('05-20-2019','1'),('10-03-2019','2'),
 
 insert into trainee (tr_name, age, address, course_id, user_id)
 values ('vlad','20','Str 1','1','1'),
+('maria','22','Str 1','1','1'),
 ('elena','20','Str 1','2','5');
 
 

@@ -31,7 +31,7 @@
 							</div>
 							<input type="text" name="username" class="form-control input_user" placeholder="username" value=${name}>
 						</div>
-						<div class="input-group mb-2">
+						<div class="input-group mb-2"> 
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
@@ -47,7 +47,7 @@
 				</div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="localhost:8080/login" class="ml-2">Sign Up</a>
+						Don't have an account? <a href="/register" class="ml-2">Sign Up</a>
 					</div>
 				</div>
 			</div>
