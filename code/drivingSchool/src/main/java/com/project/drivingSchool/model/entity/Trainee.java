@@ -29,11 +29,11 @@ public class Trainee {
 	@Column(name = "address")
 	private String address;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name = "course_id")
 	private Course course;
 

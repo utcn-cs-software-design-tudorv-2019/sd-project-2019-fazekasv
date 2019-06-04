@@ -2,14 +2,20 @@ package com.project.drivingSchool.model.repository;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.drivingSchool.config.HibernateConfig;
 import com.project.drivingSchool.model.entity.Course;
 import com.project.drivingSchool.model.entity.Trainee;
+import com.project.drivingSchool.model.entity.Trainer;
 import com.project.drivingSchool.model.entity.User;
 
 @Repository
@@ -57,6 +63,32 @@ public class TraineeRepo {
 		return results.isEmpty()? null: results.get(0);
 	}
 
-	
+	public Trainee findByUser(User user) {
+		Session sessionObj = HibernateConfig.buildSessionFactory().openSession();
+		List<Trainee> results = null;
+		try {
+		Criteria cr = sessionObj.createCriteria(Trainee.class);
+		cr.add(Restrictions.eq("user", user));
+		results = cr.list();
+		} finally {
+			sessionObj.close();
+		}
+//		sessionObj.close();
+		
+		return results.isEmpty()? null: results.get(0);
+		
+	}
+
+	public void updateInfo(Trainee trainee) {
+		
+		Session sessionObj = HibernateConfig.buildSessionFactory().openSession();
+		
+		sessionObj.beginTransaction();
+		sessionObj.update(trainee);
+		sessionObj.getTransaction().commit();
+		
+//		sessionObj.close();
+		
+	}
 	
 }

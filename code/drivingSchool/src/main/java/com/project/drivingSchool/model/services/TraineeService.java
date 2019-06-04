@@ -30,4 +30,15 @@ public class TraineeService {
 	public Course findCourseById(int courseElem) {
 		return tr.findCourseById(courseElem);
 	}
+
+	public Trainee findByUser(User user) {
+		return tr.findByUser(user);
+	}
+
+	public void updateInfo(Trainee trainee, String name, int age, String address) {
+		trainee.setName(name);
+		trainee.setAge(age);
+		trainee.setAddress(address);
+		tr.updateInfo(trainee);
+	}
 }
