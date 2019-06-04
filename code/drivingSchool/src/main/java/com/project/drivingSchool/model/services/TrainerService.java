@@ -47,4 +47,10 @@ public class TrainerService {
 	public List<Trainee> findTraineesByCourse(Course c) {
 		return tr.findTraineesByCourse(c);
 	}
+
+	public void registerTrainer(User user, Trainer trainer) {
+		
+		tr.registerTrainer(user, trainer);
+		
+	}
 }

@@ -100,4 +100,27 @@ public List<Trainee> findTraineesByCourse(Course c) {
 	
 	return results.isEmpty()? null: results;
 }
+
+public void registerTrainer(User user, Trainer trainer) {
+	
+Session sessionObj = HibernateConfig.buildSessionFactory().openSession();
+	
+	sessionObj.beginTransaction();
+	sessionObj.save(user);
+	sessionObj.getTransaction().commit();
+	
+	Criteria cr = sessionObj.createCriteria(User.class);
+	cr.add(Restrictions.eq("email", user.getEmail()));
+	List<User> results = cr.list();
+	
+	trainer.setUser(results.get(0));
+	
+	sessionObj.beginTransaction();
+	sessionObj.save(trainer);
+	sessionObj.getTransaction().commit();
+	
+	sessionObj.close();
+	
+	
+}
 }

@@ -17,7 +17,7 @@
 </head>
 <body>
 <h1>Register</h1>
-<div>
+<div class="d-flex justify-content-center">
 	<div>
 		<a href="/registerTrainee">Register Trainee</a>
 	</div>
