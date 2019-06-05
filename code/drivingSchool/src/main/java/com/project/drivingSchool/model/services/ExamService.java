@@ -1,10 +1,10 @@
 package com.project.drivingSchool.model.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
@@ -71,6 +71,22 @@ public class ExamService {
 		    i++;
 		}
 		 return qq;
+	}
+	
+	public List<String> getAnswers(){
+		List<String> aa = new ArrayList<>();
+		
+		Map<String, Boolean> haha = examItems.get(qq);
+		
+		for(String a: haha.keySet()){
+			aa.add(a);
+		};
+		
+		return  aa;
+	}
+	
+	public boolean getCorectResponse(String question, String value) {
+		return examItems.get(question).get(value);
 	}
 	
 }

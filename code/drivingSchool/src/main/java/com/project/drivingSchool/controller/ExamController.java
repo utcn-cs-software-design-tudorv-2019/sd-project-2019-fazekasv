@@ -26,16 +26,22 @@ public class ExamController {
 	static int mistakes = 0;
 	static List<Integer> results = null;
 	
+	boolean aa,bb,cc;
+	
  
 	@RequestMapping(value = { "/exam" })
 	public String login(Model model, HttpSession session) {
 		
 		model.addAttribute("score", points);
 		model.addAttribute("mistake", mistakes);
-		model.addAttribute("question", es.getQuestion());
-		model.addAttribute("a", "aaaaa");
-		model.addAttribute("b", "bb");
-		model.addAttribute("c", "ccccc");
+		String question = es.getQuestion();
+		model.addAttribute("question", question);
+		model.addAttribute("a", es.getAnswers().get(0));
+		model.addAttribute("b", es.getAnswers().get(1));
+		model.addAttribute("c", es.getAnswers().get(2));
+		aa = es.getCorectResponse(question, es.getAnswers().get(0));
+		bb = es.getCorectResponse(question, es.getAnswers().get(1));
+		cc = es.getCorectResponse(question, es.getAnswers().get(2));
 
 		return "exam";
 	}
@@ -46,14 +52,20 @@ public class ExamController {
 			@RequestParam(value = "b", required=false) boolean b,
 			@RequestParam(value = "c", required=false) boolean c){
 
-		System.out.println(a +"" +  b +""+ c);
 		
+		if (a == aa && b == bb && c ==cc) {
 		this.points++;
-		
+		} else {
+			mistakes++;
+		}
 		if (points == 5) {
+			points = 0;
+			mistakes = 0;
 			return "succes";
 		}
 		if (mistakes == 2) {
+			points = 0;
+			mistakes = 0;
 			return "fail";
 		}
 		
