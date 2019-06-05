@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.project.drivingSchool.config.HibernateConfig;
 import com.project.drivingSchool.model.entity.Course;
+import com.project.drivingSchool.model.entity.Exam;
 import com.project.drivingSchool.model.entity.Trainee;
 import com.project.drivingSchool.model.entity.Trainer;
 import com.project.drivingSchool.model.entity.User;
@@ -89,6 +90,16 @@ public class TraineeRepo {
 		
 //		sessionObj.close();
 		
+	}
+
+	public List<Exam> findExams() {
+		Session sessionObj = HibernateConfig.buildSessionFactory().openSession();
+		Criteria cr = sessionObj.createCriteria(Exam.class);
+		List<Exam> results = cr.list();
+		
+		//sessionObj.close();
+		
+		return results.isEmpty()? null: results;
 	}
 	
 }

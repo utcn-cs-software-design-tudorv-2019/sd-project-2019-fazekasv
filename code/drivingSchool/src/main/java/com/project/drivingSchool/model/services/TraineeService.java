@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.drivingSchool.model.entity.Course;
+import com.project.drivingSchool.model.entity.Exam;
 import com.project.drivingSchool.model.entity.Trainee;
 import com.project.drivingSchool.model.entity.User;
 import com.project.drivingSchool.model.repository.TraineeRepo;
@@ -40,5 +41,9 @@ public class TraineeService {
 		trainee.setAge(age);
 		trainee.setAddress(address);
 		tr.updateInfo(trainee);
+	}
+
+	public List<Exam> findExams() {
+		return tr.findExams();
 	}
 }

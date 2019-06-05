@@ -31,4 +31,44 @@ public class Exam {
 	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "id_trainee")
 	private Trainee trainee;
+
+	public int getExamId() {
+		return examId;
+	}
+
+	public void setExamId(int examId) {
+		this.examId = examId;
+	}
+
+	public Date getExamDate() {
+		return examDate;
+	}
+
+	public void setExamDate(Date examDate) {
+		this.examDate = examDate;
+	}
+
+	public boolean isExamResult() {
+		return examResult;
+	}
+
+	public void setExamResult(boolean examResult) {
+		this.examResult = examResult;
+	}
+
+	public Trainee getTrainee() {
+		return trainee;
+	}
+
+	public void setTrainee(Trainee trainee) {
+		this.trainee = trainee;
+	}
+
+	@Override
+	public String toString() {
+		return "Exam [examId=" + examId + ", examDate=" + examDate + ", examResult=" + examResult + ", trainee="
+				+ trainee + "]";
+	}
+	
+	
 }

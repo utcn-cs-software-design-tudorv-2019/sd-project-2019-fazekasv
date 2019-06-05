@@ -1,4 +1,7 @@
-
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page import ="java.util.ArrayList"%>
+<%@ page import ="java.util.List"%>
+<%@ page import ="com.project.drivingSchool.model.entity.User"%>
 <!DOCTYPE html>
 <html>
     
@@ -27,6 +30,26 @@
 	<div>
 	<h1> Course Start Date: ${courseDate}</h1>
 	
+	 <div style="background-color:lightgreen">
+	 <h2>Exams</h2>
+	 <table>
+	 <tr> 
+	 <th>date</th>
+	 <th>result</th>
+	<c:forEach items="${exams}" var="entry"> 
+  	<tr>
+    	<td>${entry.examDate}</td>
+    	<td>${entry.examResult}</td>
+    </tr>
+	</c:forEach>
+</table>
+<br/><br/>
+</div>
+<br/><br/>
+	
+	 <div>
+	 	<a href="/exam">Take Exam</a>
+	 </div>
 	
 
 </body>
